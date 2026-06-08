@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
@@ -11,9 +12,10 @@ export default function Hero() {
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
+        padding: "0 20px",
       }}
     >
-      {/* Background Glow */}
+      {/* Purple Glow */}
       <div
         style={{
           position: "absolute",
@@ -27,6 +29,7 @@ export default function Hero() {
         }}
       />
 
+      {/* Cyan Glow */}
       <div
         style={{
           position: "absolute",
@@ -47,59 +50,88 @@ export default function Hero() {
         style={{
           textAlign: "center",
           zIndex: 10,
+          maxWidth: "900px",
         }}
       >
         <h1
           style={{
-            fontSize: "5rem",
+            fontSize: "clamp(3rem,8vw,6rem)",
             fontWeight: "700",
+            marginBottom: "15px",
           }}
         >
           Yasvanth R
         </h1>
 
-        <h2
+        <div
           style={{
-            fontSize: "2rem",
-            background:
-              "linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899)",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
+            marginBottom: "25px",
           }}
         >
-          AI Engineer • Generative AI Developer
-        </h2>
+          <TypeAnimation
+            sequence={[
+              "AI/ML Engineer",
+              2000,
+              "Generative AI Developer",
+              2000,
+              "Full Stack Developer",
+              2000,
+              "Machine Learning Enthusiast",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+            style={{
+              fontSize: "clamp(1.5rem,4vw,2.2rem)",
+              fontWeight: "600",
+              background:
+                "linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899)",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+            }}
+          />
+        </div>
 
         <p
           style={{
-            maxWidth: "700px",
-            margin: "20px auto",
+            maxWidth: "750px",
+            margin: "0 auto",
             color: "#cbd5e1",
+            fontSize: "1.1rem",
+            lineHeight: "1.8",
           }}
         >
-          Building intelligent AI solutions using
-          Machine Learning, NLP, RAG, Gemini API,
-          React and Full Stack Development.
+          Passionate AI/ML Engineer building intelligent
+          applications using Machine Learning, NLP,
+          Retrieval-Augmented Generation (RAG),
+          Generative AI, React, and Full Stack Development.
+          Focused on solving real-world problems through
+          innovative AI solutions.
         </p>
 
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: "15px",
-            marginTop: "30px",
+            gap: "20px",
+            marginTop: "35px",
+            flexWrap: "wrap",
           }}
         >
           <a
             href="/resume.pdf"
             download
             style={{
-              padding: "12px 24px",
-              borderRadius: "12px",
+              padding: "14px 30px",
+              borderRadius: "14px",
               background:
                 "linear-gradient(90deg,#06b6d4,#8b5cf6)",
               color: "white",
               textDecoration: "none",
+              fontWeight: "600",
+              boxShadow:
+                "0 0 25px rgba(139,92,246,0.4)",
             }}
           >
             Download Resume
@@ -128,6 +160,17 @@ export default function Hero() {
           >
             <FaLinkedin />
           </a>
+        </div>
+
+        <div
+          style={{
+            marginTop: "40px",
+            color: "#94a3b8",
+            fontSize: "0.95rem",
+          }}
+        >
+          📍 Chennai, Tamil Nadu • Open to AI/ML &
+          Software Development Opportunities
         </div>
       </motion.div>
     </section>
